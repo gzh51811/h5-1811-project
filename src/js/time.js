@@ -6,8 +6,9 @@ function fn(){
     var time = new Date();
     var str= "";
     var div = document.getElementById("time");
-	var hour = document.getElementById("hours");
-//    console.log(time);
+	// var hour = document.getElementById("hours");
+    var p=document.getElementsByTagName("p")[0];
+    var hour=document.getElementsByTagName("span")[0];
     var year = time.getFullYear();
     var mon = time.getMonth()+1;
     var day = time.getDate();
@@ -37,7 +38,7 @@ function fn(){
 		hour.innerHTML = "凌晨好";
 	} else if(h < 12){
 		hour.innerHTML = "上午好";
-	} else if(h < 15){
+	} else if(h < 14){
 		hour.innerHTML = "中午好";
 	} else if(h < 18){
 		hour.innerHTML = "下午好";
