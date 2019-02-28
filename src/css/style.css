@@ -96,7 +96,7 @@ input {
 }
 
 /*/!*登录页登录和重置按钮*!/.providerView a是供应商管理页面下信息查看也得返回按钮的样式*/
-input[type='submit'], input[type='reset'], .providerView a {
+input[type='button'], input[type='reset'], .providerView a {
     width: 30%;
     cursor: pointer;
     background: #54a4d7;

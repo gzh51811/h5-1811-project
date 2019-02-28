@@ -4,23 +4,24 @@
 
 ### 打开网址：
 
-?	
+?	首页：http://localhost:10086/html/login.html
 
 ### 使用技术：
 
-#### 	jQuery 
+#### 		jQuery    
 
 ### 项目结构：
 
-?    ├─doc	
-    └─src
-        ├─css				样式
-        ├─db				数据库操作
-        ├─html				各个界面
-        ├─img				图片
-        ├─js				
-        ├─lib				插件
-        └─router				路由
+├─doc
+└─src
+    ├─api
+    │  ├─db
+    │  ├─routers
+    │  └─utils
+    ├─css
+    ├─html
+    ├─img
+    └─js
 
 ### 团队：
 
