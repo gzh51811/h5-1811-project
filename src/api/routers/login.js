@@ -15,6 +15,8 @@ router.post('/', async (ctx, next) => {
         if(res!=''){
             if(res[0].password==_password){
                 ctx.body = {
+                    username:res[0].username,
+                    choice:res[0].choice,
                     status:"success"
                 }
             }else{
@@ -24,18 +26,17 @@ router.post('/', async (ctx, next) => {
             }
         }else{
             ctx.body = {
-                code:100,
-                msg:'fail'
+                status:"fail"
             }
         }
     // res = res[0];
     // if(res){
     //     if(res.password==_password){
     //         ctx.body = {
-    //             // _id:res._id,
-    //             // username:res.username,
-    //             code:200,
-    //             msg:'success'    
+                // // _id:res._id,
+                // // username:res.username,
+                // code:200,
+                // msg:'success'    
             
     //         }
     //     }else{
