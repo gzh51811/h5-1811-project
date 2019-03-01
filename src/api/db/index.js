@@ -1,17 +1,24 @@
+/**
+ * 数据库操作：CRUD
+ * 1. 增
+ * 2. 删
+ * 3. 改
+ * 4. 查
+ */
 const mongodb = require('mongodb');
 
 const MongoClient = mongodb.MongoClient;
 
 const database_url = 'mongodb://localhost:27017';
-const database_name = 'htgl';
-async function connect() {
+const database_name = '1811';
+
+async function connect(){
     let client = await MongoClient.connect(database_url,{ useNewUrlParser: true });
     let db = client.db(database_name);
-     return {db,client};
+    return {db,client}
 }
-// exports.insert = async (colName,data)=>{
 
-// }
+
 exports.insert = async (colName,data)=>{
 
     let {db,client} = await connect();
@@ -62,3 +69,4 @@ exports.find = async (colName,query)=>{
     // 返回查询结果
     return res;
 }
+

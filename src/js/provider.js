@@ -16,7 +16,7 @@ $( () =>{
                 <td>${item.name}</td>
                 <td>${item.tel}</td>
                 <td>${item.fax}</td>
-                <td>${item.des}</td>
+                <td>${item.time}</td>
                 <td>
                     <a href="providerView.html"><img src="../img/read.png" alt="查看" title="查看"/></a>
                     <a href="providerUpdate.html"><img src="../img/xiugai.png" alt="修改" title="修改"/></a>
@@ -57,7 +57,7 @@ $( () =>{
                                 <td>${str.name}</td>
                                 <td>${str.tel}</td>
                                 <td>${str.fax}</td>
-                                <td>${str.des}</td>
+                                <td>${str.time}</td>
                                 <td>
                                 <a href="providerView.html"><img src="../img/read.png" alt="查看" title="查看"/></a>
                                 <a href="providerUpdate.html"><img src="../img/xiugai.png" alt="修改" title="修改"/></a>

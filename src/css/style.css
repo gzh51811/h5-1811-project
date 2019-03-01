@@ -59,6 +59,7 @@ input {
     border-radius: 8px;
     padding: 90px 38px 48px 30px;
     /*border: 1px solid green;*/
+    position: relative;
 }
 
 .loginForm label {
@@ -67,7 +68,7 @@ input {
 }
 
 .inputbox {
-    height: 60px;
+    height: 47px;
 }
 
 .inputbox input {
@@ -90,13 +91,31 @@ input {
     -moz-box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
     box-shadow: 0px 1px 4px 0px rgba(168, 168, 168, 0.9) inset;
 }
-
-.subBtn {
+.hint{
+    width:234px;
+    height:30px;
+    /* border: 1px solid red; */
+    padding-top: 0;
     margin-left: 70px;
+    text-align: center;
+    line-height: 30px;
+    color: red;
+    display: none;
+}
+.subBtn {
+    width: 250px;
+    margin: 10px 0 0 70px;
+    padding-bottom: 5px;
+    position: absolute;
+    bottom: -3px;
+    left: 43px;
+    /* margin-left: 70px; */
+    /* margin-bottom: 5px; */
+
 }
 
 /*/!*登录页登录和重置按钮*!/.providerView a是供应商管理页面下信息查看也得返回按钮的样式*/
-input[type='submit'], input[type='reset'], .providerView a {
+input[type='button'], input[type='reset'], .providerView a {
     width: 30%;
     cursor: pointer;
     background: #54a4d7;
@@ -229,9 +248,9 @@ input[type='reset']:active, input[type='reset']:focus, .providerView a:hover, .p
     margin: 20px;
 }
 
-.providerAdd form {
+/* .providerAdd form {
 
-}
+} */
 
 .providerAdd div {
     margin-top: 12px;

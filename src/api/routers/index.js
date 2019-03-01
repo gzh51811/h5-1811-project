@@ -1,35 +1,13 @@
-// const Koa = require('koa');
-// const Router = require('koa-router');
-// const koaBody = require('koa-body');
-// //创建路由
-// var router = new Router(); 
-// //引入路由文件
-//  const proliRouter = require('./proli');
-//  //路由
-//  router.use('/proli',proliRouter.routes());
-// module.exports = router;
-
-// const koa = require('koa');
-// const Router = require('koa-router');
-// const koaBody = require('koa-body');
-// //创建路由
-// var router = new Router();
-// //引入路由文件
-// const proliRouter = require('./proli');
-// //路由
-// router.use('/proli',proliRouter.routes());
-// module.exports = router;
-const Koa = require('koa');
+const koa = require('koa');
 const Router = require('koa-router');
 const koaBody = require('koa-body');
 
 // 创建路由
-var router = new Router(); 
+const router = new Router();
 
 // 引入页面路由
+const loginRouter = require('./login');
 const proliRouter = require('./proli');
-// const loginRouter = require('./login');
-
 router.use(koaBody({
     // 支持formdata
     multipart:true,
@@ -50,7 +28,6 @@ router.use(koaBody({
     }
 }));
 
-router.use('/proli',proliRouter.routes())
-// router.use('/login',loginRouter.routes())
-
+router.use('/login',loginRouter.routes());
+router.use('/proli',proliRouter.routes());
 module.exports = router;

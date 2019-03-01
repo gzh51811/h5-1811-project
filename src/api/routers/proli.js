@@ -20,7 +20,7 @@ router.post('/',async (ctx,next)=>{
             name:res.name,
             tel:res.tel,
             fax:res.fax,
-            des:res.des
+            time:res.time
         }
     }else{
          ctx.body = {
