@@ -1,29 +1,5 @@
 $(()=>{
-    // $('form').on("blur","input",function (event) {
-    //     var target = $(event.target);
-    //     var num=target.val().trim();
-    //     if(num==''){
-    //         target.parent('div').addClass('error')
-    //     }else{
-    //         if(target.index()==2){
-    //            if( checkReg.chinese(num)){
-    //               target.parent('div').addClass('ok');
-    //            }else{
-    //                target.parent('div').addClass('error').removeClass('ok');
-    //                target.next().text('请输入正确的格式');
-    //            }
-    //         }else if(target.index()==3||target.index()==4){
-    //            if( checkReg.tel(num)){
-    //               target.parent('div').addClass('ok');
-    //            }else{
-    //                target.parent('div').addClass('error').removeClass('ok');
-    //                target.next().text('请输入正确的格式');
-    //            }
-    //         }
-    //         target.parent('div').addClass('ok');
-    //         target.next().text('');
-    //     }
-    // })
+    var _id=decodeURI(location.search).slice(1);
     $('form').on("blur","div",function () {
         var num=$(this).children('input').val().trim();
         if(num==''){
@@ -48,7 +24,7 @@ $(()=>{
             } 
         } 
     })
-    $('.save').click(function () { 
+           $('.save').click(function () { 
         var j=0;
         for (let i = 0; i < $('form div').length-1; i++) {
             // const element = array[i];
@@ -71,9 +47,11 @@ $(()=>{
                
         $.ajax({
             type: 'post',
-            url: '/proadd',
+            url: '/proli',
             async: true,
             data: {
+                "_id":_id,
+                "update":1,
                 "code":code,
                 "proname":proname,
                 "name":name,

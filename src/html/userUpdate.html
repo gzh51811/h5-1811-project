@@ -49,17 +49,17 @@
                     <span >*</span>
                 </div>
 
-                <div>
+                <div class="ok">
                     <label >用户性别：</label>
 
                     <select name="">
-                        <option value="man">男</option>
-                        <option value="woman" selected>女</option>
+                        <option value="男">男</option>
+                        <option value="女" selected>女</option>
                     </select>
                 </div>
                 <div>
                     <label for="data">出生日期：</label>
-                    <input type="text" name="data" id="data" placeholder="2016年2月1日"/>
+                    <input type="text" name="data" id="data" placeholder="2016-2-1"/>
                     <span >*</span>
                 </div>
                 <div>
@@ -71,17 +71,17 @@
                     <label for="userAddress">用户地址：</label>
                     <input type="text" name="userAddress" id="userAddress" placeholder="北京"/>
                 </div>
-                <div>
+                <div class="ok">
                     <label >用户类别：</label>
-                    <input type="radio" name="userlei"/>管理员
-                    <input type="radio" name="userlei" checked/>经理
-                    <input type="radio" name="userlei"/>普通用户
+                    <input type="radio" name="userlei" value="管理员" checked/>管理员
+                    <input type="radio" name="userlei" value="经理"/>经理
+                    <input type="radio" name="userlei" value="普通用户"/>普通用户
 
                 </div>
                 <div class="providerAddBtn">
                     <!--<a href="#">保存</a>-->
                     <!--<a href="userList.html">返回</a>-->
-                    <input type="button" value="保存" onclick="history.back(-1)"/>
+                    <input class="save" type="button" value="保存" />
                     <input type="button" value="返回" onclick="history.back(-1)"/>
                 </div>
             </form>
@@ -91,6 +91,9 @@
 </section>
 <footer class="footer">
 </footer>
+<script src="../js/jquery.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/userUpdate.js"></script>
 <script src="../js/time.js"></script>
 
 </body>

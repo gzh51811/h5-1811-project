@@ -64,12 +64,12 @@
                     <input type="text" name="userRemi" id="userRemi"/>
                     <span>*请输入确认密码</span>
                 </div>
-                <div>
+                <div class="ok">
                     <label >用户性别：</label>
 
                     <select name="">
-                        <option value="man">男</option>
-                        <option value="woman">女</option>
+                        <option value="男">男</option>
+                        <option value="女">女</option>
                     </select>
                     <span></span>
                 </div>
@@ -87,18 +87,18 @@
                     <label for="userAddress">用户地址：</label>
                     <input type="text" name="userAddress" id="userAddress"/>
                 </div>
-                <div>
+                 <div class="ok">
                     <label >用户类别：</label>
-                    <input type="radio" name="userlei"/>管理员
-                    <input type="radio" name="userlei"/>经理
-                    <input type="radio" name="userlei"/>普通用户
+                    <input type="radio" name="userlei" value="管理员" checked/>管理员
+                    <input type="radio" name="userlei" value="经理"/>经理
+                    <input type="radio" name="userlei" value="普通用户"/>普通用户
 
                 </div>
                 <div class="providerAddBtn">
                     <!--<a href="#">保存</a>-->
                     <!--<a href="userList.html">返回</a>-->
-                    <input type="button" value="保存" onclick="history.back(-1)"/>
-                    <input type="button" value="返回" onclick="history.back(-1)"/>
+                    <input class="save" type="button" value="保存"/>
+                    <input type="button" value="返回"/>
                 </div>
             </form>
         </div>
@@ -107,6 +107,9 @@
 </section>
 <footer class="footer">
 </footer>
+<script src="../js/jquery.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/userAdd.js"></script>
 <script src="../js/time.js"></script>
 
 </body>

@@ -4,26 +4,21 @@ const db = require('../db');
 var router = new Router();
 
 router.post('/',async (ctx,next)=>{
-    //解构
-    // console.log(ctx.request.body);
-    // console.log(Object.keys(ctx.request.body)[0]);
-    if(Object.keys(ctx.request.body)[0]=='val'){
-        let {val}=ctx.request.body;
-        let res = await db.find('provide',{proname:val});         
+    if(Object.keys(ctx.request.body)[0]=='_id'&&Object.keys(ctx.request.body)[1]=='dele'){
+         var ObjectId = require('mongodb').ObjectID;
+         let {_id}=ctx.request.body;
+        let res = await db.delete('userinfo', {_id:ObjectId(_id)});
+        console.log(res);
+        ctx.body = 1;
+    }else if(Object.keys(ctx.request.body)[0]=='val'){
+         let {val}=ctx.request.body;
+        let res = await db.find('userinfo',{username:val});         
         // res=res[0]; 
         if(res){
             console.log(res.length);
             if(res.length==1){
                 res=res[0]; 
-                ctx.body=[{
-                    _id:res._id,
-                    code:res.code,
-                    proname:res.proname,
-                    name:res.name,
-                    tel:res.tel,
-                    fax:res.fax,
-                    time:res.time
-                }]
+                ctx.body=[res]
             }else{
                 console.log(res);
                 ctx.body=res;
@@ -40,18 +35,18 @@ router.post('/',async (ctx,next)=>{
     }else if(Object.keys(ctx.request.body)[0]=='_id'&&Object.keys(ctx.request.body)[1]=='look'){
         var ObjectId = require('mongodb').ObjectID;
          let {_id}=ctx.request.body;
-        let res = await db.find('provide', {_id:ObjectId(_id)});
+        let res = await db.find('userinfo', {_id:ObjectId(_id)});
         res=res[0];
         if(res){
             ctx.body={
                 _id:res._id,
-                proname:res.proname,
-                name:res.name,
+                username:res.username,
+                sex:res.sex,
                 tel:res.tel,
-                fax:res.fax,
-                time:res.time,
-                des:res.des,
-                code:res.code
+                userID:res.userID,
+                dob:res.dob,
+                site:res.site,
+                type:res.type
             }
         }else{
              ctx.body = {
@@ -59,26 +54,20 @@ router.post('/',async (ctx,next)=>{
                 msg:'fail'
             }
         }
-    }else if(Object.keys(ctx.request.body)[0]=='_id'&&Object.keys(ctx.request.body)[1]=='dele'){
-         var ObjectId = require('mongodb').ObjectID;
-         let {_id}=ctx.request.body;
-        let res = await db.delete('provide', {_id:ObjectId(_id)});
-        console.log(res);
-        ctx.body = 1;
     }else if(Object.keys(ctx.request.body)[0]=='_id'&&Object.keys(ctx.request.body)[1]=='update'){
         var ObjectId = require('mongodb').ObjectID;
         let {_id}=ctx.request.body;
-        let {code,proname,name,tel,address,fax,des}=ctx.request.body;
-        let newData = {$set:{code,proname,name,tel,address,fax,des}}
+        let {username,sex,dob,tel,site,type}=ctx.request.body;
+        let newData = {$set:{username,sex,dob,tel,site,type}}
         console.log(_id,newData);  
-        let res = await db.update('provide',{_id:ObjectId(_id)},newData);
+        let res = await db.update('userinfo',{_id:ObjectId(_id)},newData);
         ctx.body = res
         console.log(res);
         
     }
-})
+    });
 router.get('/',async (ctx,next)=>{
-    let res = await db.find('provide');
+    let res = await db.find('userinfo');
     ctx.body=res;
 })
 module.exports = router;
