@@ -6,15 +6,15 @@ $(()=>{
         $('.hint').css('display','none')
     })
     $('#btn').click(()=>{
-        let _user = user.val();
-        let _password = password.val()
+        let username = user.val();
+        let psw = password.val()
         $.ajax({
             type:'post',
             url:'/login',
             async:true,
             data:{
-                _user,
-               _password
+                username,
+               psw
 
             },
             success:(str)=>{

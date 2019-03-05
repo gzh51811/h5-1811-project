@@ -115,5 +115,7 @@ $(() => {
         console.log($(this).parent().parent().find('td').eq(0).html())
         $(location).attr('href', '/html/billView.html?id=' + $(this).parent().parent().find('td').eq(0).html());
     })
-
+// 获取用户名
+    let username = localStorage.getItem('user');
+    console.log(username);
 })
