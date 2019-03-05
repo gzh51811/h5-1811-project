@@ -13,6 +13,11 @@ const billAddRouter = require('./billAdd')
 const billUpdateRouter = require('./billUpdate');
 const billViewRouter = require('./billView');
 const tokenverifyRouter = require('./tokenverify');
+const proaddRouter = require('./proadd');
+const userliRouter = require('./userli');
+const useraddRouter = require('./useradd');
+const pswRouter = require('./psw.js');
+
 router.use(koaBody({
     // 支持formdata
     multipart:true,
@@ -40,4 +45,8 @@ router.use('/billAdd',billAddRouter.routes());
 router.use('/billUpdate',billUpdateRouter.routes());
 router.use('/billView',billViewRouter.routes());
 router.use('/tokenverify',tokenverifyRouter.routes());
+router.use('/proadd',proaddRouter.routes());
+router.use('/userli',userliRouter.routes());
+router.use('/useradd',useraddRouter.routes());
+router.use('/psw',pswRouter.routes());
 module.exports = router;
