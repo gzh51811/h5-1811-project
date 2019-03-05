@@ -8,6 +8,11 @@ const router = new Router();
 // 引入页面路由
 const loginRouter = require('./login');
 const proliRouter = require('./proli');
+const billListRouter = require('./billList')
+const billAddRouter = require('./billAdd')
+const billUpdateRouter = require('./billUpdate');
+const billViewRouter = require('./billView');
+const tokenverifyRouter = require('./tokenverify');
 router.use(koaBody({
     // 支持formdata
     multipart:true,
@@ -30,4 +35,9 @@ router.use(koaBody({
 
 router.use('/login',loginRouter.routes());
 router.use('/proli',proliRouter.routes());
+router.use('/billList',billListRouter.routes());
+router.use('/billAdd',billAddRouter.routes());
+router.use('/billUpdate',billUpdateRouter.routes());
+router.use('/billView',billViewRouter.routes());
+router.use('/tokenverify',tokenverifyRouter.routes());
 module.exports = router;

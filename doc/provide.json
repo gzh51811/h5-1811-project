@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5c78d11bc81c396402f330dd"},"proname":"供应商1","name":"韩璐","tel":{"$numberLong":"15918230478"},"fax":{"$numberLong":"15918230478"},"des":"有钱人1","time":"2019.3.1"}
+{"_id":{"$oid":"5c78d11bc81c396402f330df"},"proname":"供应商2","name":"韩露","tel":{"$numberLong":"18390877789"},"fax":{"$numberLong":"18390877789"},"des":"有钱淫2","time":"2019.3.1"}
