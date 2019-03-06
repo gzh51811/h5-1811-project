@@ -1,4 +1,14 @@
 $( () =>{
+    let user = localStorage.getItem('user');
+    console.log(JSON.parse(user));
+    let welcome = JSON.parse(user)
+    $('.welcome').html(welcome.username);
+     // 退出
+    $('._back').on('click',()=>{
+        localStorage.removeItem('user');
+        // location.reload();
+        $(location).attr('href', '/html/login.html')
+    })
      $.ajax({
             type: 'get',
             url: '/proli',

@@ -1,4 +1,22 @@
 $(()=>{
+     let user = localStorage.getItem('user');
+    console.log(JSON.parse(user));
+    let welcome = JSON.parse(user)
+    $('.welcome').html(welcome.username);
+    // _id=welcome._id;
+    console.log(welcome.type); 
+    if(welcome.type=='管理员'){
+        $('.add').css('display','block')
+    }else{
+         $('.add').css('display','none')
+    }
+    // 退出
+    $('._back').on('click',()=>{
+        localStorage.removeItem('user');
+        // location.reload();
+        $(location).attr('href', '/html/login.html')
+    })
+
      function pag(str,page,qty,length) {
         console.log(str);   
         let html='';   
@@ -98,6 +116,7 @@ $(()=>{
                 
                 pag(str,page,qty,length)
             })
+            if(welcome.type=='管理员'){
                 $('table').on('click','img',function () {  
                     if($(this).attr('alt')=='查看'){
                       location.href = './userView.html?' +$(this).parents('tr').attr('data-id');
@@ -138,6 +157,13 @@ $(()=>{
                         })
                     }
                 })
+            }else{
+                 $('table').on('click','img',function () {  
+                    if($(this).attr('alt')=='查看'){
+                      location.href = './userView.html?' +$(this).parents('tr').attr('data-id');
+                    }
+                 })
+            }
             }
         })
     $("._search").click(function () {
