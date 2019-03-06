@@ -116,6 +116,14 @@ $(() => {
         $(location).attr('href', '/html/billView.html?id=' + $(this).parent().parent().find('td').eq(0).html());
     })
 // 获取用户名
-    let username = localStorage.getItem('user');
-    console.log(username);
+    let user = localStorage.getItem('user');
+    console.log(JSON.parse(user));
+    let welcome = JSON.parse(user)
+    $('.welcome').html(welcome.username);
+    // 退出
+    $('.back').on('click',()=>{
+        localStorage.removeItem('user');
+        // location.reload();
+        $(location).attr('href', '/html/login.html')
+    })
 })

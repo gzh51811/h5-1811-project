@@ -14,7 +14,7 @@ $(()=>{
             async:true,
             data:{
                 username,
-               psw
+                psw
 
             },
             success:(str)=>{

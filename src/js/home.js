@@ -5,14 +5,14 @@ $(()=>{
     }else{
         user = JSON.parse(user)
     }
-    console.log(user.username)
+    // console.log(user.username)
     // 验证
     // if(user._id){
     //     $('.welcome').html(user.username);
     // }
 // token验证
     // user = JSON.parse(user)
-    console.log(user.token)
+    // console.log(user.token)
     if(user.token){
         $.ajax({
             type:'post',
@@ -27,7 +27,7 @@ $(()=>{
                 }else if(str.status==304){
                     $(location).attr('href', '/html/login.html')
                 }
-                console.log(str)
+                // console.log(str.res.username)
             }
         })
     }

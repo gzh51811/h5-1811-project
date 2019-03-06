@@ -8,7 +8,7 @@
 
 ### 使用技术：
 
-#### 		jQuery    
+#### 		jQuery、JavaScript、HTML、MongoDB、NodeJS、koa、    
 
 ### 项目结构：
 
