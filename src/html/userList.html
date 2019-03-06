@@ -11,8 +11,8 @@
     <header class="publicHeader">
         <h1>超市账单管理系统</h1>
         <div class="publicHeaderR">
-            <p><span>下午好！</span><span style="color: #fff21b"> Admin</span> , 欢迎你！</p>
-            <a href="login.html">退出</a>
+            <p><span>下午好！</span><span style="color: #fff21b" class="welcome"> Admin</span> , 欢迎你！</p>
+            <a href="login.html" class="_back">退出</a>
         </div>
     </header>
 <!--时间-->
@@ -43,7 +43,7 @@
                 <span>用户名：</span>
                 <input type="text" placeholder="请输入用户名"/>
                 <input class="_search" type="button" value="查询"/>
-                <a href="userAdd.html">添加用户</a>
+                <a class="add" href="userAdd.html">添加用户</a>
             </div>
             <!--用户-->
             <table class="providerTable" cellpadding="0" cellspacing="0">
@@ -83,7 +83,7 @@
                     </td>
                 </tr> -->
             </table>
-            <div class="pag">
+            <div class="pag" style="display: none;">
         <span ><a href="javascript:;" class="back">上一页</a></span>
         <span ><a href="javascript:;" class="next">下一页</a></span>
         </div>

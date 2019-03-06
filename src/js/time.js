@@ -58,4 +58,10 @@ function totwo(n){
         return n =""+n;
     }
 }
+// console.log($('.list li').eq(4));
+$('.list li').eq(4).click(function () {
+     localStorage.removeItem('user');
+        // location.reload();
+        $(location).attr('href', '/html/login.html')
+})
 

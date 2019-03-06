@@ -1,4 +1,17 @@
 $(()=>{
+    // var
+    let user = localStorage.getItem('user');
+    console.log(JSON.parse(user));
+    let welcome = JSON.parse(user)
+    $('.welcome').html(welcome.username);
+    var _id=JSON.parse(localStorage.getItem('user'))._id;
+    console.log(_id);
+     // 退出
+    $('._back').on('click',()=>{
+        localStorage.removeItem('user');
+        // location.reload();
+        $(location).attr('href', '/html/login.html')
+    })
     $('form').on("blur","div",function () {
         if($(this).index()==0){
             var psw=$('input').eq(0).val();
@@ -9,7 +22,7 @@ $(()=>{
                        url: '/psw',
                        async: true,
                        data: {
-                           "_id":'5c7d2236176e541ef03e4c9f',
+                           "_id":_id,
                            "psw":psw        
                        },
                          success: function (str) {
@@ -60,7 +73,7 @@ $(()=>{
             url: '/psw',
             async: true,
             data:{
-                "_id":'5c7d2236176e541ef03e4c9f',
+                "_id":_id,
                 "psw":$('#newPassword').val()
             },
             success:function (str) {
